@@ -19,15 +19,20 @@
 package at.struct.wasbugs.wasbug1;
 
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 /**
  *
  */
+@RequestScoped
+@Named
 public class BackingBean {
+
     private @EJB SomeEjb someEjb;
 
-    public int meaningOfLife() {
-        someEjb.someMethod();
-        return 42;
+    public int getMeaningOfLife() {
+        // the meaning of life is not always as clear as it should be...
+        return 42 + someEjb.someOffset();
     }
 }

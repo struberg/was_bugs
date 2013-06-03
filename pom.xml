@@ -11,7 +11,7 @@
 
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
-        <tomee.version>1.6.0-SNAPSHOT</tomee.version>
+        <tomee.version>1.5.1</tomee.version>
     </properties>
 
     <modules>

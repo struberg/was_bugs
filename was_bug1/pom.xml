@@ -18,6 +18,12 @@
 
         howto reproduce:
             Simply try to deploy this WebApp on WAS. It even refuses to start.
+
+        starting locally:
+            in the was_bug1 directory just start the app via
+            mvn clean install tomee:run
+            and open the following URL in your browser:
+            http://localhost:8080/was_bug1/page.xhtml
     </description>
 
     <properties>

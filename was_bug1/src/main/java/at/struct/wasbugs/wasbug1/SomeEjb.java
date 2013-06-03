@@ -19,13 +19,16 @@
 package at.struct.wasbugs.wasbug1;
 
 import javax.ejb.Stateless;
+import java.util.Random;
 
 /**
  * @author <a href="mailto:struberg@yahoo.de">Mark Struberg</a>
  */
 @Stateless
 public class SomeEjb {
-    public void someMethod() {
-        // enocare ;)
+    private Random rand = new Random();
+
+    public int someOffset() {
+        return rand.nextInt(100);
     }
 }
