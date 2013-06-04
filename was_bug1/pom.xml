@@ -44,6 +44,6 @@
     </dependencies>
 
     <build>
-        <finalName>was_bug1</finalName>
+        <finalName>${project.artifactId}</finalName>
     </build>
 </project>

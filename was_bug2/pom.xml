@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug2</artifactId>
+    <packaging>war</packaging>
+
+    <description>
+        demonstraged bug:
+            If there is no WEB-INF/beans.xml then CDI injection is broken
+            despite the fact that all Bean got correctly scanned.
+            This happens because the WebBeansConfigurationListener
+            (or the analogon for WAS) doesn't get setup correctly.
+
+            According to the spec this is perfectly allowed as a beans.xml
+            in WEB-INF/classes/META-INF also accounts for WEB-INF/classes to
+            get picked up as BDA. The same happens also if the CDI beans are
+            in some jar in WEB-INF/lib or in some EAR ejb-jars or shared libs.
+
+        howto reproduce:
+            Simply deploy this WebApp on WAS and invoke
+            http://localhost:8080/was_bug2/page.xhtml
+
+        starting locally:
+            in the was_bug2 directory start the app via
+            mvn clean install tomee:run
+            and open the following URL in your browser:
+            http://localhost:8080/was_bug2/page.xhtml
+
+    </description>
+
+    <properties>
+        <interdyn.version>1.0-SNAPSHOT</interdyn.version>
+    </properties>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>

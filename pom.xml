@@ -11,11 +11,12 @@
 
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
-        <tomee.version>1.5.1</tomee.version>
+        <tomee.version>1.6.0-SNAPSHOT</tomee.version>
     </properties>
 
     <modules>
         <module>was_bug1</module>
+        <module>was_bug2</module>
     </modules>
 
     <dependencies>
