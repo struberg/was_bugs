@@ -17,11 +17,19 @@
             NullPointerException.
 
         howto reproduce:
-            Simply try to deploy this WebApp on WAS. It even refuses to start.
+            First you need to 'mvn install' my InterDyn Extension.
+            $: git clone https://github.com/struberg/InterDyn.git
+            $: cd InterDyn
+            $: mvn clean install
+            This is a CDI Extension which uses ProcessAnnotatedType
+            and also contains the sample 'InvoMon' (Invocation Monitor)
+            Interceptor which gets used to showcase this bug.
+
+            Then simply try to deploy this WebApp on WAS. It even refuses to start.
 
         starting locally:
             in the was_bug1 directory just start the app via
-            mvn clean install tomee:run
+            $: mvn clean install tomee:run
             and open the following URL in your browser:
             http://localhost:8080/was_bug1/page.xhtml
     </description>
