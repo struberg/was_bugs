@@ -16,10 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package at.struct.wasbugs.wasbug1;
+package at.struct.wasbugs.wasbug3;
 
-import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -29,7 +29,10 @@ import javax.inject.Named;
 @Named
 public class BackingBean {
 
-    public int getMeaningOfLife() {
-        return 42;
+    @Inject
+    private MyMessages msg;
+
+    public String getMessage() {
+        return msg.sayHelloTo("mark");
     }
 }

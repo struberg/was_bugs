@@ -1,0 +1,6 @@
+<beans>
+    <alternatives>
+        <!-- This has no effect in WAS due to the BDA stuff. See CDI-18 -->
+        <class>org.apache.deltaspike.core.impl.message.MessageFormatMessageInterpolator</class>
+    </alternatives>
+</beans>

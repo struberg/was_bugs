@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug3</artifactId>
+    <packaging>war</packaging>
+
+    <description>
+        demonstrated bug:
+            Removing @Alternative from a CDI bean via ProcessAnnotatedType
+            does not work in WebSphere.
+            We are using Apache DeltaSpike 'globalAlternatives' feature to showcase
+            this issue. This feature is heavily used due to the 'broken' BDA
+            behaviour for Alternatives in CDI-1.0 See spec issue CDI-18 for more info.
+
+        howto reproduce:
+            Simply deploy this WebApp on WAS and invoke
+            http://localhost:8080/was_bug3/page.xhtml
+
+        starting locally:
+            in the was_bug3 directory start the app via
+            mvn clean install tomee:run
+            and open the following URL in your browser:
+            http://localhost:8080/was_bug3/page.xhtml
+
+    </description>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+
+    <properties>
+        <deltaspike.version>0.4</deltaspike.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+    </dependencies>
+</project>
