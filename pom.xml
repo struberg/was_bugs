@@ -18,6 +18,7 @@
         <module>was_bug1</module>
         <module>was_bug2</module>
         <module>was_bug3</module>
+        <module>was_bug4</module>
     </modules>
 
     <dependencies>

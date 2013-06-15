@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug4</artifactId>
+    <packaging>war</packaging>
+
+    <description>
+        demonstraged bug:
+            If there are multiple beans.xml enabling the same
+            Interceptor then WAS fails to start.
+
+        howto reproduce:
+            First you need to 'mvn install' my InterDyn Extension.
+            $: git clone https://github.com/struberg/InterDyn.git
+            $: cd InterDyn
+            $: mvn clean install
+            This is a CDI Extension which uses ProcessAnnotatedType
+            and also contains the sample 'InvoMon' (Invocation Monitor)
+            Interceptor which gets used to showcase this bug.
+
+            Then simply try to deploy this WebApp on WAS. It refuses to start
+            and claims that the interceptor is enabled multiple times.
+
+            What actually is forbidden is to have the same interceptor
+            multiple times in the SAME beans.xml.
+
+
+        starting locally:
+            in the was_bug4 directory just start the app via
+            $: mvn clean install tomee:run
+            and open the following URL in your browser:
+            http://localhost:8080/was_bug4/page.xhtml
+
+        Solution:
+            Please see the following bugs for what to port back to WAS:
+            * https://issues.apache.org/jira/browse/OWB-207
+            * https://issues.apache.org/jira/browse/TOMEE-276
+    </description>
+
+    <properties>
+        <interdyn.version>1.0-SNAPSHOT</interdyn.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>at.struct.devtools.cdi.invomon</groupId>
+            <artifactId>invomon</artifactId>
+            <version>${interdyn.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>at.struct.devtools.cdi.interdyn</groupId>
+            <artifactId>interdyn</artifactId>
+            <version>${interdyn.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>
