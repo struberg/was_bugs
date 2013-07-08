@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <deltaspike.version>0.4-SNAPSHOT</deltaspike.version>
+        <deltaspike.version>0.4</deltaspike.version>
 
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
@@ -19,6 +19,7 @@
         <module>was_bug2</module>
         <module>was_bug3</module>
         <module>was_bug4</module>
+        <module>was_bug5</module>
     </modules>
 
     <dependencies>
