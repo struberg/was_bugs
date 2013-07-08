@@ -15,8 +15,12 @@
             IllegalAccessException when proxying Extensions in an EAR
 
         howto reproduce:
+            build was_bug5 and deploy was_bug5.ear into WAS.
+            Then invoke the application via
+            http://localhost:9083/was_bug5-war/page.xhtml
 
-
+            Application works fine when deployed as WAR in WAS and
+            also works fine as EAR in JBossAS-7.1.1.Final and TomEE.
     </description>
 
     <modules>
