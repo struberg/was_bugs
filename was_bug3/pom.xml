@@ -34,10 +34,6 @@
         <finalName>${project.artifactId}</finalName>
     </build>
 
-    <properties>
-        <deltaspike.version>0.4</deltaspike.version>
-    </properties>
-
 
     <dependencies>
         <dependency>
