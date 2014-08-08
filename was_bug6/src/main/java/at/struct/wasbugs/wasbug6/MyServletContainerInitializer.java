@@ -54,8 +54,12 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
 
         if (handledClasses.size() != 1)
         {
-            throw new ServletException("Expected only 1 class but got " + handledClasses.size() +
-                                       ". Classes are: " + Arrays.toString(handledClasses.toArray()));
+            String msg = "Expected only 1 class but got " + handledClasses.size() +
+                         ". Classes are: " + Arrays.toString(handledClasses.toArray());
+
+            log.severe("\n\nFooo WebSphere is even loosing the ServletException!\n" + msg + "\n\n\n");
+
+            throw new ServletException(msg);
         }
 
         nrClasses = handledClasses.size();
