@@ -1,12 +1,5 @@
 <beans>
     <interceptors>
-        <!--
-         This is another bug in WebSphere which got resolved in OWB 2++ years ago
-         It is actually even needed by the spec to enable an Interceptor for
-         EACH and every BDA separately, like with Alternatives. Either you completely drop
-         BDA like we did in OWB, or you implement it properly.
-         Commented out for now and will be reported with was_bug4.
         <class>at.struct.devtools.cdi.invomon.InvocationMonitorInterceptor</class>
-        -->
     </interceptors>
 </beans>

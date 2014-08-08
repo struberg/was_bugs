@@ -7,11 +7,11 @@
     <packaging>pom</packaging>
 
     <properties>
-        <deltaspike.version>0.4</deltaspike.version>
+        <deltaspike.version>1.0.0</deltaspike.version>
 
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
-        <tomee.version>1.6.0-SNAPSHOT</tomee.version>
+        <tomee.version>1.6.0</tomee.version>
     </properties>
 
     <modules>
@@ -20,6 +20,7 @@
         <module>was_bug3</module>
         <module>was_bug4</module>
         <module>was_bug5</module>
+        <module>was_bug6</module>
     </modules>
 
     <repositories>
@@ -113,7 +114,7 @@
             <plugin>
                 <groupId>org.apache.openejb.maven</groupId>
                 <artifactId>tomee-maven-plugin</artifactId>
-                <version>1.6.0-SNAPSHOT</version>
+                <version>${tomee.version}</version>
                 <configuration>
                     <synchronization>
                         <extensions>

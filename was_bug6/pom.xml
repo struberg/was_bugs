@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug6</artifactId>
+    <packaging>war</packaging>
+
+    <description>
+        demonstrated bug:
+            WAS passes the @HandlesTypes itself into the onStartup of a
+            ServletContainerInitializer.
+            This is not ok according to the servlet-3.0 spec.
+
+        howto reproduce:
+            $> mvn clean install
+            Then simply try to deploy this WebApp on WAS. It even refuses to start.
+            If you debug into the ServletContainerInitializer you will see that the handled
+            Annotation itself gets passed in to onStartup as well.
+
+        starting locally:
+            in the was_bug6 directory just start the app via
+            $: mvn clean install tomee:run
+            and open the following URL in your browser:
+            http://localhost:8080/was_bug6/page.xhtml
+    </description>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>
