@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <description>
-        demonstrated bug:
+        demonstrated bug: PMR 77553,010,618
             WAS passes the @HandlesTypes itself into the onStartup of a
             ServletContainerInitializer.
             This is not ok according to the servlet-3.0 spec.
