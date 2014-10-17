@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug7</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+
+        <!-- for this samples we also need JAX-WS -->
+        <tomee.classifier>plus</tomee.classifier>
+
+    </properties>
+
+
+    <description>
+        demonstrated bug: PMR 77981,010,618
+            WAS doesn't properly inject @Resource UserTransaction into CDI beans
+            if they get initialized after getting called from an EJB with
+            TransactionManagementType.CONTAINER. 
+
+        howto reproduce:
+            $> mvn clean install
+
+            Then deploy the WAR to your WAS and invoke
+            http://localhost:9080/was_bug7/warmup
+
+            After that invoke the WasBug7WebServiceImpl WebService. This should also work perfectly fine.
+
+            But now the ugly parts. Stop and restart the application again.
+            And then invoke the WasBug7WebServiceImpl WebService FIRST (means the @Stateless WebService
+            will initialize the CDI bean) -> KAWUUMM.
+            From this point on the CDI service is trashed for both EJB and CDI usages...
+
+    </description>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>

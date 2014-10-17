@@ -12,6 +12,9 @@
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
         <tomee.version>1.6.0</tomee.version>
+
+        <!-- for most samples simple web-profile is enough -->
+        <tomee.classifier>webprofile</tomee.classifier>
     </properties>
 
     <modules>
@@ -21,6 +24,7 @@
         <module>was_bug4</module>
         <module>was_bug5</module>
         <module>was_bug6</module>
+        <module>was_bug7</module>
     </modules>
 
     <repositories>
@@ -93,6 +97,12 @@
             <version>1.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jta_1.1_spec</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 
@@ -116,6 +126,8 @@
                 <artifactId>tomee-maven-plugin</artifactId>
                 <version>${tomee.version}</version>
                 <configuration>
+                    <tomeeVersion>${tomee.version}</tomeeVersion>
+                    <tomeeClassifier>${tomee.classifier}</tomeeClassifier>
                     <synchronization>
                         <extensions>
                             <extension>.class</extension>
@@ -139,7 +151,7 @@
                         <groupId>org.apache.openejb</groupId>
                         <artifactId>apache-tomee</artifactId>
                         <version>${tomee.version}</version>
-                        <classifier>webprofile</classifier>
+                        <classifier>${tomee.classifier}</classifier>
                         <type>zip</type>
                         <!-- we have to set this to runtime, else it does not work -->
                         <scope>runtime</scope>
