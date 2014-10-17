@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug8_ear</artifactId>
+    <packaging>ear</packaging>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>at.struct.wasbugs</groupId>
+            <artifactId>was_bug8_jar</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>at.struct.wasbugs</groupId>
+            <artifactId>was_bug8_war</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <!-- not actually needed - just to have something which gets scanned and keeps our startup busy -->
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <version>6</version>
+                    <modules>
+                        <webModule>
+                            <groupId>at.struct.wasbugs</groupId>
+                            <artifactId>was_bug8_war</artifactId>
+                            <bundleFileName>was_bug8.war</bundleFileName>
+                        </webModule>
+                        <webModule>
+                            <groupId>at.struct.wasbugs</groupId>
+                            <artifactId>was_bug8_war</artifactId>
+                            <bundleFileName>was_bug8_a.war</bundleFileName>
+                        </webModule>
+                        <webModule>
+                            <groupId>at.struct.wasbugs</groupId>
+                            <artifactId>was_bug8_war</artifactId>
+                            <bundleFileName>was_bug8_b.war</bundleFileName>
+                        </webModule>
+                    </modules>
+
+                    <displayName>was_bug8-ear</displayName>
+                    <!-- If I want maven to generate the application.xml, set this to true -->
+                    <generateApplicationXml>false</generateApplicationXml>
+
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <!--<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>-->
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Version>${maven.build.timestamp}</Implementation-Version>
+                        </manifestEntries>
+                    </archive>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

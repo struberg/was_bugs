@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug8</artifactId>
+    <packaging>pom</packaging>
+
+
+    <description>
+        demonstrated bug: PMR 78018,010,618
+
+        howto reproduce:
+            $> mvn clean install
+            Deploy this WebApp on WAS and start the webapp.
+
+	        During startup just keep hitting the refresh button for the page
+            http://localhost:9080/was_bug8/warmup
+
+            You will see a log line for each scanned class.
+            And you will see the logs of the refresh button just in the middle of them.
+
+        PS: I was not able to reproduce it with a simple WAR file.
+
+    </description>
+
+    <modules>
+        <module>was_bug8_jar</module>
+        <module>was_bug8_war</module>
+        <module>was_bug8_ear</module>
+    </modules>
+</project>

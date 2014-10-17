@@ -25,6 +25,7 @@
         <module>was_bug5</module>
         <module>was_bug6</module>
         <module>was_bug7</module>
+        <module>was_bug8</module>
     </modules>
 
     <repositories>
