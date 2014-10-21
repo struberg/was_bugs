@@ -3,7 +3,7 @@
 
     <parent>
         <groupId>at.struct.wasbugs</groupId>
-        <artifactId>wasbugs-parent</artifactId>
+        <artifactId>was_bug8</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -18,7 +18,7 @@
             $> mvn clean install
             Deploy this WebApp on WAS and start the webapp.
 
-	        During startup just keep hitting the refresh button for the page
+            During startup just keep hitting the refresh button for the page
             http://localhost:8080/was_bug8/warmup
 
             You will see a log line for each scanned class.

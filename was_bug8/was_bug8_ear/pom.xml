@@ -3,7 +3,7 @@
 
     <parent>
         <groupId>at.struct.wasbugs</groupId>
-        <artifactId>wasbugs-parent</artifactId>
+        <artifactId>was_bug8</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
