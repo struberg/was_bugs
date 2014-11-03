@@ -1,0 +1,2 @@
+<!-- needed for websphere. If not here, then WAS doesn't start CDI -->
+<beans/>

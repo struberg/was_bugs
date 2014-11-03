@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>was_bug9</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug9_war</artifactId>
+    <packaging>war</packaging>
+
+
+    <description>
+        demonstrated bug: PMR 78018,010,618
+
+        howto reproduce:
+            $> mvn clean install
+            Deploy this WebApp on WAS and start the webapp.
+
+            During startup just keep hitting the refresh button for the page
+            http://localhost:8080/was_bug9/warmup
+
+            You will see a log line for each scanned class.
+            And you will see the logs of the refresh button just in the middle of them.
+
+        PS: I was not able to reproduce it with a simple WAR file.
+
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>at.struct.wasbugs</groupId>
+            <artifactId>was_bug9_jar</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- not actually needed - just to have something which gets scanned and keeps our startup busy -->
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>

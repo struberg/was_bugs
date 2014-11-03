@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug10</artifactId>
+    <packaging>war</packaging>
+
+    <description>
+        demonstrated bug: PMR 7983,010,618
+        @Startup @Singleton bean cannot use @RequestScoped beans in @PostConstruct method.
+        But the request context must be started for all EJB invocations according to the CDI spec.
+
+        howto reproduce:
+        $> mvn clean install
+        Deploy this WebApp on WAS and start the webapp.
+        You will see an error in the log. The application starts up nontheless
+        but the initialisation of the @Startup @Singleton will not be performed
+        (the problem silently gets ignored).
+
+        Navigate to
+        http://localhost:9080/was_bug10/
+        must show
+        "@Singleton @Startup bean got properly initialized: true"
+        I you get 'false' then the @Singleton bean was not properly initialized.
+
+        The fix for this issue is pretty easy. Just invoke ContextsService#startContext(RequestScoped.class) and
+        shut it down in a finally block after the PostConstruct method got invoked.
+
+    </description>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>
