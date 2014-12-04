@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug11</artifactId>
+    <packaging>war</packaging>
+
+    <description>
+        demonstrated bug: PMR  xxxxx 
+
+
+        howto reproduce:
+        $> mvn clean install 
+        Deploy this WebApp on WAS and bench the webapp with Apache JMeter.
+        
+        Navigate to
+        http://localhost:9080/was_bug11/index.xhtml
+
+        On my box (4x3.2GHz i5) I got 600 p/s on TomEE and only 3 p/s on WAS.
+        That means the WAS performance is _insanely_ slow. 
+    </description>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>
