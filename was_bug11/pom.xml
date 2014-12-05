@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <description>
-        demonstrated bug: PMR  xxxxx 
+        demonstrated bug: PMR 78383,010,618.
 
 
         howto reproduce:
