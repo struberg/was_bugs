@@ -18,7 +18,6 @@ package at.struct.wasbugs.wasbug7;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 /**
