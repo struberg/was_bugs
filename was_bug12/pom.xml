@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <artifactId>was_bug12</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        demonstrated bug:  TODO PMR
+
+
+        howto reproduce:
+        $> mvn clean install
+        Deploy this WebApp on WAS.
+
+        Navigate to
+        http://localhost:9080/was_bug12/index.xhtml
+    </description>
+
+
+    <modules>
+        <module>was_bug12_war</module>
+    </modules>
+
+</project>

@@ -29,6 +29,7 @@
         <module>was_bug9</module>
         <module>was_bug10</module>
         <module>was_bug11</module>
+        <module>was_bug12</module>
     </modules>
 
     <repositories>
