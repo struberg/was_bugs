@@ -1,4 +1,4 @@
-package at.struct.wasbugs.wasbug12;
+package at.struct.wasbugs.wasbug12.be;
 
 import java.util.Date;
 

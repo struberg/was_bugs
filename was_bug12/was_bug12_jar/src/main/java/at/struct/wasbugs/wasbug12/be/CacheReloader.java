@@ -1,4 +1,4 @@
-package at.struct.wasbugs.wasbug12;
+package at.struct.wasbugs.wasbug12.be;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Lock;

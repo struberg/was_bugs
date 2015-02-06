@@ -1,4 +1,7 @@
-package at.struct.wasbugs.wasbug12;
+package at.struct.wasbugs.wasbug12.fe;
+
+import at.struct.wasbugs.wasbug12.be.CacheInfo;
+import at.struct.wasbugs.wasbug12.be.CacheUsingService;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;

@@ -26,6 +26,7 @@
 
 
     <modules>
+        <module>was_bug12_jar</module>
         <module>was_bug12_war</module>
     </modules>
 

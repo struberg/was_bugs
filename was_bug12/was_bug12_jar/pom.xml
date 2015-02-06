@@ -12,23 +12,6 @@
     </parent>
 
 
-    <artifactId>was_bug12_war</artifactId>
-    <packaging>war</packaging>
-
-
-    <dependencies>
-
-        <dependency>
-            <groupId>at.struct.wasbugs</groupId>
-            <artifactId>was_bug12_jar</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-    </dependencies>
-
-
-    <build>
-        <finalName>${project.artifactId}</finalName>
-    </build>
+    <artifactId>was_bug12_jar</artifactId>
 
 </project>
