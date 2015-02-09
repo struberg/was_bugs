@@ -46,9 +46,9 @@ public class CacheReloader {
     }
 
 
-    @Schedule(hour = "*", minute = "*", second = "*/10")
+    @Schedule(hour = "*", minute = "*/1")
     public void reload() {
-        log.log(Level.INFO, "Reloading Cache");
+        log.log(Level.INFO, "Reloading Cache on instance {0}", service);
 
         // know lets do some heavy work
         try {

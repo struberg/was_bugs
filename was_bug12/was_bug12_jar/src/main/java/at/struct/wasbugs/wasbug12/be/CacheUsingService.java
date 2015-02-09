@@ -48,6 +48,6 @@ public class CacheUsingService {
 
 
     private void log() {
-        log.log(Level.INFO, "current thread: {0} - value of reloads: {1}", new Object[] {Thread.currentThread().getName(), reloads});
+        log.log(Level.INFO, "current thread: {0} - value of reloads: {1}, instance {2}", new Object[] {Thread.currentThread().getName(), reloads, this});
     }
 }
