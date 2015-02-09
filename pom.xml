@@ -11,7 +11,7 @@
 
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
-        <tomee.version>1.6.0</tomee.version>
+        <tomee.version>1.7.1</tomee.version>
 
         <!-- for most samples simple web-profile is enough -->
         <tomee.classifier>webprofile</tomee.classifier>
@@ -29,6 +29,7 @@
         <module>was_bug9</module>
         <module>was_bug10</module>
         <module>was_bug11</module>
+        <module>was_bug12</module>
     </modules>
 
     <repositories>
