@@ -29,7 +29,7 @@
     <packaging>pom</packaging>
 
     <description>
-        demonstrated bug:  TODO PMR
+        demonstrated bug: PMR 78725,010,618
 
 
         howto reproduce:
