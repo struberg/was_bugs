@@ -18,22 +18,24 @@
  */
 package at.struct.wasbugs.wasbug13.fe;
 
-import at.struct.wasbugs.wasbug13.be.BrokenSingleton;
+import at.struct.wasbugs.wasbug13.be.TimerMonitor;
 
-import javax.ejb.EJB;
-import javax.ejb.TimerService;
+import javax.ejb.Timer;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class SampleBean {
+public class SampleBean
+{
 
-    private @EJB BrokenSingleton singleton;
+    private @Inject TimerMonitor timerMonitor;
 
 
-    public TimerService getTimer() {
-        return singleton.getTimerService();
+    public Timer getNextTimeout()
+    {
+        return timerMonitor.getTimer();
     }
 
 }

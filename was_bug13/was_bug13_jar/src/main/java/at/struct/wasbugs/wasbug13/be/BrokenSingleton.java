@@ -25,8 +25,10 @@ import javax.ejb.LockType;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.ejb.Timeout;
+import javax.ejb.Timer;
 import javax.ejb.TimerConfig;
 import javax.ejb.TimerService;
+import javax.inject.Inject;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,24 +41,24 @@ public class BrokenSingleton {
     private static final Logger log = Logger.getLogger(BrokenSingleton.class.getName());
 
 
+    private @Inject TimerMonitor monitor;
+
     private @Resource TimerService timerService;
 
 
     @PostConstruct
     public void init() {
-        doSomething();
-        timerService.createSingleActionTimer(TimeUnit.MINUTES.toMillis(15), new TimerConfig());
+        timerService.createIntervalTimer(0, TimeUnit.MINUTES.toMillis(1), new TimerConfig());
     }
 
 
     @Timeout
-    public void doSomething() {
+    public void doSomething(Timer timer)
+    {
+        monitor.setTimer(timer);
         log.log(Level.INFO, "Hey, seems WAS is not broken anymore -> congratulation you've fixed it");
     }
 
 
-    public TimerService getTimerService() {
-        return timerService;
-    }
 
 }

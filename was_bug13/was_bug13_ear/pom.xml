@@ -42,7 +42,6 @@
             <groupId>at.struct.wasbugs</groupId>
             <artifactId>was_bug13_jar</artifactId>
             <version>${project.version}</version>
-            <type>ejb</type>
         </dependency>
 
         <dependency>
@@ -69,11 +68,6 @@
                             <artifactId>was_bug13_war</artifactId>
                             <bundleFileName>was_bug13.war</bundleFileName>
                         </webModule>
-                        <ejbModule>
-                            <groupId>at.struct.wasbugs</groupId>
-                            <artifactId>was_bug13_jar</artifactId>
-                            <bundleFileName>was_bug13.jar</bundleFileName>
-                        </ejbModule>
                     </modules>
 
                     <displayName>was_bug13-ear</displayName>
