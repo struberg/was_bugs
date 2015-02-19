@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <description>
-        demonstrated bug: PMR 7983,010,618
+        demonstrated bug: PMR 77983,010,618
         @Startup @Singleton bean cannot use @RequestScoped beans in @PostConstruct method.
         But the request context must be started for all EJB invocations according to the CDI spec.
 
