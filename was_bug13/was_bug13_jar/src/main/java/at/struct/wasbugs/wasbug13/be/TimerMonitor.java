@@ -1,24 +1,24 @@
 package at.struct.wasbugs.wasbug13.be;
 
-import javax.ejb.Timer;
 import javax.enterprise.context.ApplicationScoped;
+import java.util.Date;
 
 @ApplicationScoped
 public class TimerMonitor
 {
 
-    private volatile Timer timer;
+    private volatile Date nextTimeout;
 
 
-    public Timer getTimer()
+    public Date getTimer()
     {
-        return timer;
+        return nextTimeout;
     }
 
 
-    void setTimer(Timer timer)
+    void setTimer(Date nextTimeout)
     {
-        this.timer = timer;
+        this.nextTimeout = nextTimeout;
     }
 
 }

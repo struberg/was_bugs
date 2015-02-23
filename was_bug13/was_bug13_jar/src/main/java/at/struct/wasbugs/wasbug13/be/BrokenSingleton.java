@@ -55,7 +55,7 @@ public class BrokenSingleton {
     @Timeout
     public void doSomething(Timer timer)
     {
-        monitor.setTimer(timer);
+        monitor.setTimer(timer.getNextTimeout());
         log.log(Level.INFO, "Hey, seems WAS is not broken anymore -> congratulation you've fixed it");
     }
 

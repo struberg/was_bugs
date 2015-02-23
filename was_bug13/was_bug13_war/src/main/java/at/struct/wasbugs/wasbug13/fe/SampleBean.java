@@ -20,10 +20,10 @@ package at.struct.wasbugs.wasbug13.fe;
 
 import at.struct.wasbugs.wasbug13.be.TimerMonitor;
 
-import javax.ejb.Timer;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.Date;
 
 @Named
 @RequestScoped
@@ -33,7 +33,7 @@ public class SampleBean
     private @Inject TimerMonitor timerMonitor;
 
 
-    public Timer getNextTimeout()
+    public Date getNextTimeout()
     {
         return timerMonitor.getTimer();
     }
