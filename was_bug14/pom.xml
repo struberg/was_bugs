@@ -19,6 +19,13 @@
         demonstrated bug: ???? TODO
 
         ignored deltaspike @Exclude
+        We have an @Alternative MockService which is excluded
+        in certain project stages.
+        This works perfectly fine for all standard CDI requests but fail
+        if we invoke the bean from a @Stateless WebService.
+
+        Please note that this bug only hits us if we have the webservice as ejb-jar.
+        And this also ONLY happens in WAS-8.5.5.5. It works perfectly fine in WAS-8.5.5.3.
     </description>
 
     <properties>
