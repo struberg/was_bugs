@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <description>
-        demonstrated bug: ???? TODO
+        demonstrated bug: PMR 79477,010,618.
 
         ignored deltaspike @Exclude
         We have an @Alternative MockService which is excluded
