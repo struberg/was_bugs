@@ -31,5 +31,14 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>at.struct.wasbugs.wasbug14.BackingWs</servlet-name>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>at.struct.wasbugs.wasbug14.BackingWs</servlet-name>
+        <url-pattern>/BackingWs</url-pattern>
+    </servlet-mapping>
 
 </web-app>

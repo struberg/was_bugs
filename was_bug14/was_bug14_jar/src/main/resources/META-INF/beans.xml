@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
 
     <alternatives>
-        <class>at.struct.wasbugs.wasbug14.MockImpl</class>
+        <class>at.struct.wasbugs.wasbug14.MockServiceImpl</class>
     </alternatives>
 
 </beans>

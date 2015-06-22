@@ -7,10 +7,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 
 @ApplicationScoped
-@MyQualifier(value = "one")
 @Alternative
 @Exclude(exceptIfProjectStage = ProjectStage.Development.class)
-public class MockImpl implements ServiceInterface {
+public class MockServiceImpl implements ServiceInterface {
 
 
     @Override

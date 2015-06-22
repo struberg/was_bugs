@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>was_bugs | was_bug14</title>
+</h:head>
+
+<h:body>
+
+    <p><b>CDI:</b></p>
+    <p>
+        <h:outputLabel for="projectStage"
+                       value="Server is running with Apache Deltaspike ProjectStage: " />
+        <h:outputText id="projectStage"
+                      style="font-weight: bold;"
+                      value="#{backingBean.projectStage}" />
+    </p>
+
+    <h5>Services used in this page</h5>
+    <ol>
+        <li><h:outputText value="#{backingBean.usedServiceClass}" /></li>
+    </ol>
+
+    <p>
+        <h:outputLabel for="meaningOfLife1" value="The meaning of life (1):" />
+        <h:outputText id="meaningOfLife1" value="#{backingBean.meaningOfLife}" />
+        <br />
+        <h:outputLabel for="someString1" value="Given String:" />
+        <h:outputText id="someString1" value="#{backingBean.someString}" />
+        <br />
+    </p>
+
+
+</h:body>
+
+</html>

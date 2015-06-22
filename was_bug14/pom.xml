@@ -13,19 +13,25 @@
 
 
     <artifactId>was_bug14</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <description>
-        demonstrates bug: ???? TODO
+        demonstrated bug: ???? TODO
 
         ignored deltaspike @Exclude
     </description>
 
+    <properties>
+        <!-- for this samples we also need JAX-WS -->
+        <tomee.classifier>plus</tomee.classifier>
+    </properties>
 
-    <build>
-        <finalName>${project.artifactId}</finalName>
-    </build>
-
+    <modules>
+        <module>was_bug14_jar</module>
+        <module>was_bug14_war</module>
+        <module>was_bug14_ws</module>
+        <module>was_bug14_ear</module>
+    </modules>
 
     <dependencies>
 

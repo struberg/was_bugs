@@ -3,17 +3,16 @@ package at.struct.wasbugs.wasbug14;
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-@MyQualifier(value = "one")
-public class RealServiceOne implements ServiceInterface {
+public class RealService implements ServiceInterface {
 
 
     @Override
     public int meaningOfLife() {
-        return 1;
+        return 42;
     }
 
     @Override
     public String someString() {
-        return "this string comes from the real service implementation with qualifier ONE";
+        return "this string comes from the real service implementation";
     }
 }
