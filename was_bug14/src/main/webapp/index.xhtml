@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>was_bugs | was_bug14</title>
+</h:head>
+
+<h:body>
+
+    <p>
+        <h:outputLabel for="projectStage"
+                       value="Server is running with Apache Deltaspike ProjectStage: " />
+        <h:outputText id="projectStage"
+                      style="font-weight: bold;"
+                      value="#{backingBean.projectStage}" />
+    </p>
+
+    <h5>Services used in this page</h5>
+    <ol>
+        <li><h:outputText value="#{backingBean.getUsedServiceClass('one')}" /></li>
+        <li><h:outputText value="#{backingBean.getUsedServiceClass('two')}" /></li>
+    </ol>
+
+    <p>
+        <h:outputLabel for="meaningOfLife1"
+                       value="The meaning of life (1):" />
+        <h:outputText id="meaningOfLife1"
+                      value="#{backingBean.getMeaningOfLife('one')}" />
+        <br />
+        <h:outputLabel for="meaningOfLife2"
+                       value="The meaning of life (2):" />
+        <h:outputText id="meaningOfLife2"
+                      value="#{backingBean.getMeaningOfLife('two')}" />
+        <br />
+        <h:outputLabel for="someString1"
+                       value="Given String:" />
+        <h:outputText id="someString1"
+                      value="#{backingBean.getSomeString('one')}" />
+        <br />
+        <h:outputLabel for="someString2"
+                       value="Given String:" />
+        <h:outputText id="someString2"
+                      value="#{backingBean.getSomeString('two')}" />
+    </p>
+
+</h:body>
+
+</html>
