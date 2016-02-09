@@ -17,7 +17,6 @@
         <tomee.classifier>webprofile</tomee.classifier>
     </properties>
 
-    <module>was_bug16</module>
     <modules>
         <module>was_bug1</module>
         <module>was_bug2</module>
@@ -37,6 +36,7 @@
 <!--
         <module>was_bug16</module>
 -->
+        <module>was_bug17</module>
     </modules>
 
     <repositories>
@@ -167,6 +167,10 @@
                     <!-- path that is used by tomEE in the tomee:deploy and tomee:undeploy goal -->
                     <path>${project.build.directory}/apache-tomee/webapps${project.build.finalName}</path>
                     <args>-Dorg.apache.deltaspike.ProjectStage=${projectStage} -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms128m -Xmx256m -XX:PermSize=96m -XX:MaxPermSize=128m -XX:+DisableExplicitGC</args>
+                    <libs>
+                        <lib>remove:commons-codec</lib>
+                        <lib>commons-codec:commons-codec:1.10</lib>
+                    </libs>
                 </configuration>
                 <dependencies>
                     <dependency>
