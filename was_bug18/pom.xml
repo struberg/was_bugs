@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug18</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        demonstrated bug:
+            PMR xxxx
+            SessionContext and EjbContext lookup problems in WAS
+
+        howto reproduce:
+            deploy EAR in WAS and start the application.
+            WAS doesn't even start it but fails with an injection problem.
+            Application runs fine on Wildfly, Glassfish and TomEE.
+            Already tried dozen 'tricks' to get it running.
+            Code runs fine if all the classes are in the WAR but breaks
+            once the EJBs are in an ejb-jar or in a jar in the EARs /lib folder.
+    </description>
+
+    <modules>
+        <module>was_bug18_jar</module>
+        <module>was_bug18_war</module>
+        <module>was_bug18_ear</module>
+    </modules>
+</project>
