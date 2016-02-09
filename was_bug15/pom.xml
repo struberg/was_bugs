@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+
+    <artifactId>was_bug15</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <description>
+        demonstrated bug: PMR XXXX.
+
+        Calling a @Remote EJB trashes the ApplicationContext.
+        After invoking a @Remote EJB on WAS-8.5.5.3 any subsequent
+        nested call to a CDI @ApplicationScoped bean creates a
+        ContextNotActiveException.
+    </description>
+
+    <properties>
+        <!-- for this samples we also need JAX-WS -->
+        <tomee.classifier>plus</tomee.classifier>
+    </properties>
+
+    <modules>
+        <module>was_bug15_remote_api</module>
+        <module>was_bug15_remote_be</module>
+        <module>was_bug15_remote_ear</module>
+        <module>was_bug15_client_war</module>
+        <module>was_bug15_client_ear</module>
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+
+</project>

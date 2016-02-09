@@ -17,6 +17,7 @@
         <tomee.classifier>webprofile</tomee.classifier>
     </properties>
 
+    <module>was_bug16</module>
     <modules>
         <module>was_bug1</module>
         <module>was_bug2</module>
@@ -32,6 +33,10 @@
         <module>was_bug12</module>
         <module>was_bug13</module>
         <module>was_bug14</module>
+        <module>was_bug15</module>
+<!--
+        <module>was_bug16</module>
+-->
     </modules>
 
     <repositories>

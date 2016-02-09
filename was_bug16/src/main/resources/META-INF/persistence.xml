@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="conv2pdf" transaction-type="JTA">
+        <jta-data-source>conv2pdf</jta-data-source>
+
+        <!-- conv2pdf batch entities -->
+        <class>at.struct.wasbugs.wasbug16.fe.entities.Conv2PdfFiling</class>
+        <class>at.struct.wasbugs.wasbug16.fe.entities.Conv2PdfFile</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+    </persistence-unit>
+
+</persistence>
