@@ -25,7 +25,14 @@
 
         <dependency>
             <groupId>at.struct.wasbugs</groupId>
-            <artifactId>was_bug19_war</artifactId>
+            <artifactId>was_bug19_war1</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>at.struct.wasbugs</groupId>
+            <artifactId>was_bug19_war2</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
@@ -44,8 +51,13 @@
                     <modules>
                         <webModule>
                             <groupId>at.struct.wasbugs</groupId>
-                            <artifactId>was_bug19_war</artifactId>
-                            <bundleFileName>was_bug19.war</bundleFileName>
+                            <artifactId>was_bug19_war1</artifactId>
+                            <bundleFileName>was_bug19_1.war</bundleFileName>
+                        </webModule>
+                        <webModule>
+                            <groupId>at.struct.wasbugs</groupId>
+                            <artifactId>was_bug19_war2</artifactId>
+                            <bundleFileName>was_bug19_2.war</bundleFileName>
                         </webModule>
                     </modules>
 

@@ -1,14 +1,12 @@
 package at.struct.wasbug19;
 
-import org.apache.deltaspike.jpa.api.transaction.Transactional;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @ApplicationScoped
-@Transactional
+//X @Transactional
 public class LoadService {
 
     private @Inject EntityManager em;

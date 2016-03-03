@@ -25,7 +25,8 @@
 
     <modules>
         <module>was_bug19_jar</module>
-        <module>was_bug19_war</module>
+        <module>was_bug19_war1</module>
+        <module>was_bug19_war2</module>
         <module>was_bug19_ear</module>
     </modules>
 </project>

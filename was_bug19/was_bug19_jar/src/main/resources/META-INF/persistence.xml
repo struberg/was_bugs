@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
-    <persistence-unit name="simple-pu" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="simple-pu" transaction-type="JTA">
+        <jta-data-source>APP_ZEPTA</jta-data-source>
 
         <class>at.struct.wasbug19.entities.SimpleEntity</class>
 
@@ -11,11 +12,6 @@
             <property name="openjpa.PostLoadOnMerge" value="true"/>
             <property name="openjpa.jdbc.MappingDefaults" value="ForeignKeyDeleteAction=restrict, JoinForeignKeyDeleteAction=restrict"/>
 
-            <!-- DB_CLOSE_DELAY is need to keep the data until jvm-shutdown -->
-            <property name="openjpa.ConnectionURL" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1"/>
-            <property name="openjpa.ConnectionDriverName" value="org.h2.Driver"/>
-            <property name="openjpa.ConnectionUserName" value="sa"/>
-            <property name="openjpa.ConnectionPassword" value=""/>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
 
             <!-- enable trace-log -->

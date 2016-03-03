@@ -1,7 +1,6 @@
 package at.struct.wasbug19;
 
 import at.struct.wasbug19.entities.SimpleEntity;
-import org.apache.deltaspike.jpa.api.transaction.Transactional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -9,7 +8,7 @@ import javax.persistence.EntityManager;
 import java.util.concurrent.ThreadLocalRandom;
 
 @ApplicationScoped
-@Transactional
+//X @Transactional
 public class SimpleService {
 
     private @Inject EntityManager em;
