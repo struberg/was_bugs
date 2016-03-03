@@ -38,6 +38,7 @@
 -->
         <module>was_bug17</module>
         <module>was_bug18</module>
+        <module>was_bug19</module>
     </modules>
 
     <repositories>

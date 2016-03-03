@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.struct.wasbugs</groupId>
+        <artifactId>wasbugs-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>was_bug19</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        demonstrated bug:
+        PMR xxxx
+        OpenJPA uses ClassLoader from Entity
+
+        if the entity is in ear/lib and the 'select new' result class is located in the
+        war file, the 'select new' statement results in a 'NEW constructor operation could not resolve class named...'
+
+        howto reproduce:
+        <!-- TODO -->
+
+    </description>
+
+    <modules>
+        <module>was_bug19_jar</module>
+        <module>was_bug19_war</module>
+        <module>was_bug19_ear</module>
+    </modules>
+</project>
