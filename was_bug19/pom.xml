@@ -19,14 +19,16 @@
         war file, the 'select new' statement results in a 'NEW constructor operation could not resolve class named...'
 
         howto reproduce:
-        <!-- TODO -->
+        mvn clean install tomee:run in was_bug19_ear
+        browse to http://localhost:8080/was_bug19
+        click 'Insert Data' -> 1000 entries will be inserted
+        click the 'Load Data' Button -> kawumm...
 
     </description>
 
     <modules>
         <module>was_bug19_jar</module>
-        <module>was_bug19_war1</module>
-        <module>was_bug19_war2</module>
+        <module>was_bug19_war</module>
         <module>was_bug19_ear</module>
     </modules>
 </project>

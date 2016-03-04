@@ -1,19 +1,14 @@
 package at.struct.wasbug19;
 
-public class Report {
-
+public class ResultWrapper {
 
     private final Long id;
-
     private final String name;
 
-    private final Integer theInteger;
 
-
-    public Report(Long id, String name, Integer theInteger) {
+    public ResultWrapper(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.theInteger = theInteger;
     }
 
 
@@ -23,9 +18,5 @@ public class Report {
 
     public String getName() {
         return name;
-    }
-
-    public Integer getTheInteger() {
-        return theInteger;
     }
 }
