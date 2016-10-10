@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="simple_pu" transaction-type="RESOURCE_LOCAL">
+        <non-jta-data-source>simple_pu</non-jta-data-source>
+
+        <class>at.struct.wasbug21.entities.SimpleEntity</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="openjpa.PostLoadOnMerge" value="true"/>
+            <property name="openjpa.jdbc.MappingDefaults" value="ForeignKeyDeleteAction=restrict, JoinForeignKeyDeleteAction=restrict,
+                                                                    FieldStrategies='
+                                                                    org.joda.time.LocalDate=at.struct.wasbug21.converter.JodaTimeValueHandler,
+                                                                    org.joda.time.LocalDateTime=at.struct.wasbug21.converter.JodaTimeValueHandler,
+                                                                    org.joda.time.LocalTime=at.struct.wasbug21.converter.JodaTimeValueHandler'"/>
+
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+
+
+            <!-- enable trace-log -->
+            <property name="openjpa.Log" value="DefaultLevel=INFO,SQL=TRACE" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
