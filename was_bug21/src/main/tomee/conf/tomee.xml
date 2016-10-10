@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+
+    <!--
+    #
+    #  The <Deployments> element can be used to configure file
+    #  paths where OpenEJB should look for ejb jars or ear files.
+    #
+    #  See http://openejb.apache.org/3.0/deployments.html
+    #
+    #  The below entry is simply a default and can be changed or deleted
+    -->
+
+    <Resource id="simple_pu" type="DataSource">
+        DataSourceCreator dbcp
+        JdbcDriver org.h2.Driver
+        JdbcUrl jdbc:h2:file:/tmp/h2/simple_pu;AUTO_SERVER=TRUE;MVCC=TRUE;AUTO_SERVER_PORT=7090;MAX_LENGTH_INPLACE_LOB=160000
+        UserName sa
+        Password
+        JtaManaged false
+    </Resource>
+</tomee>

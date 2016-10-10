@@ -11,10 +11,11 @@
 
         <projectStage>Development</projectStage>
         <myfaces.version>2.1.11</myfaces.version>
-        <tomee.version>1.7.1</tomee.version>
+        <tomee.version>1.7.4</tomee.version>
 
         <!-- for most samples simple web-profile is enough -->
         <tomee.classifier>webprofile</tomee.classifier>
+        <openjpa.version>2.4.1</openjpa.version>
     </properties>
 
     <modules>
@@ -40,6 +41,7 @@
         <module>was_bug18</module>
         <module>was_bug19</module>
         <module>was_bug20</module>
+        <module>was_bug21</module>
     </modules>
 
     <repositories>
@@ -169,10 +171,13 @@
                     <warFile>${project.build.directory}/${project.build.finalName}</warFile>
                     <!-- path that is used by tomEE in the tomee:deploy and tomee:undeploy goal -->
                     <path>${project.build.directory}/apache-tomee/webapps${project.build.finalName}</path>
-                    <args>-Dorg.apache.deltaspike.ProjectStage=${projectStage} -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms128m -Xmx256m -XX:PermSize=96m -XX:MaxPermSize=128m -XX:+DisableExplicitGC</args>
+                    <args>-Dorg.apache.deltaspike.ProjectStage=${projectStage} -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms128m -Xmx256m -XX:PermSize=96m -XX:MaxPermSize=128m -XX:+DisableExplicitGC -Dh2.implicitRelativePath=true</args>
                     <libs>
                         <lib>remove:commons-codec</lib>
                         <lib>commons-codec:commons-codec:1.10</lib>
+                        <lib>remove:openjpa-</lib>
+                        <lib>org.apache.openjpa:openjpa:${openjpa.version}</lib>
+                        <lib>com.h2database:h2:1.4.192</lib>
                     </libs>
                 </configuration>
                 <dependencies>
