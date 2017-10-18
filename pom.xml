@@ -43,6 +43,7 @@
         <module>was_bug20</module>
         <module>was_bug21</module>
         <module>was_bug22</module>
+        <module>was_bug23</module>
     </modules>
 
     <repositories>

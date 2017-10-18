@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="SampleService" targetNamespace="http://private.domain.at/Webservice/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://private.domain.at/Webservice/">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://private.domain.at/Webservice/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://private.domain.at/Webservice/">
+            <xsd:element name="getData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="zugriffstag_yyyy-mm-dd" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="getDataResponse" type="tns:getDataDTO" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DataDTO" type="tns:getDataDTO"/>
+            <xsd:complexType name="getDataDTO">
+                <xsd:sequence>
+                    <xsd:element name="antragsdatum" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="vorname" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="getDataRequest">
+        <wsdl:part name="parameters" element="tns:getData"/>
+    </wsdl:message>
+    <wsdl:message name="getDataResponse">
+        <wsdl:part name="return" element="tns:getDataResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="SampleService">
+        <wsdl:operation name="getData">
+            <wsdl:input name="getDataRequestRequest" message="tns:getDataRequest"/>
+            <wsdl:output name="getDataRequestResponse" message="tns:getDataResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SampleServiceBinding" type="tns:SampleService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getData">
+            <soap:operation style="document"/>
+            <wsdl:input name="getDataRequestRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDataRequestResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SampleService">
+        <wsdl:port name="SampleServicePort" binding="tns:SampleServiceBinding">
+            <soap:address location="http://localhost/SampleService/SampleServicePort"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

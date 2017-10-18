@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- the only purpose of this file is to avoid the package name 'org.w3._2001.xmlschema' -->
+<!-- see https://jaxb.java.net/guide/Customizing_Java_packages.html -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        jaxb:version="2.0">
+    <annotation>
+        <appinfo>
+            <jaxb:schemaBindings>
+                <jaxb:package name="at.struct.wasbug23"/>
+            </jaxb:schemaBindings>
+        </appinfo>
+    </annotation>
+</schema>

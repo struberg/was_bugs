@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jxb:bindings xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns="http://java.sun.com/xml/ns/jaxws"
+              jxb:extensionBindingPrefixes="xjc" version="2.1">
+    <jxb:globalBindings generateElementProperty="false">
+        <xjc:javaType name="org.joda.time.LocalDate" xmlType="xs:date"
+                      adapter="at.struct.wasbug23.DateAdater"/>
+        <xjc:serializable/>
+    </jxb:globalBindings>
+</jxb:bindings>
